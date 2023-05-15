@@ -3,6 +3,7 @@ package com.speedrun.speedrunr.entity;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "Speedruns")
 public class Speedrun
 {
     @Id
