@@ -12,7 +12,7 @@ import java.util.List;
 public interface SpeedrunMapper
 {
 
-    SpeedrunMapper MAPPER = Mappers.getMapper(SpeedrunMapper.class);
+    SpeedrunMapper SPEEDRUN_MAPPER = Mappers.getMapper(SpeedrunMapper.class);
 
     @Mapping(target = "user.id", source = "speedrunResource.userId")
     @Mapping(target = "category.id", source = "speedrunResource.categoryId")

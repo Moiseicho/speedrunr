@@ -13,4 +13,6 @@ public interface CommentRepository extends JpaRepository<Comment, Long> {
     List<Comment> getCommentsByOPOrderByPostDateDesc(User OP);
 
     List<Comment> getCommentsBySpeedrunOrderByPostDateDesc(Speedrun speedrun);
+
+
 }

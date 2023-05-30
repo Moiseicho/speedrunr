@@ -23,4 +23,20 @@ public class BanResource {
     public Long getId() {
         return id;
     }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public int getBanTime() {
+        return banTime;
+    }
+
+    public Date getBanDate() {
+        return banDate;
+    }
+
+    public String getBanMessage() {
+        return banMessage;
+    }
 }

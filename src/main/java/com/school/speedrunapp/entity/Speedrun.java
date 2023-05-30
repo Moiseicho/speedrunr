@@ -1,9 +1,11 @@
 package com.school.speedrunapp.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 @Entity
 @Table(name = "Speedruns")
+@Data
 public class Speedrun {
     @Id
     @GeneratedValue

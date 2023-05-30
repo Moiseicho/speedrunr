@@ -1,11 +1,13 @@
 package com.school.speedrunapp.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.util.Date;
 
 @Entity
 @Table(name = "Bans")
+@Data
 public class Ban {
     @Id
     @GeneratedValue
@@ -23,5 +25,23 @@ public class Ban {
 
     public Long getId() {
         return id;
+    }
+
+    public void setUser(User user) { this.user = user; }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setBanDate(Date banDate) {
+        this.banDate = banDate;
+    }
+
+    public void setBanMessage(String banMessage) {
+        this.banMessage = banMessage;
+    }
+
+    public void setBanTime(int banTime) {
+        this.banTime = banTime;
     }
 }

@@ -14,4 +14,8 @@ public interface SpeedrunRepository extends JpaRepository<Speedrun, Long> {
     List<Speedrun> getSpeedrunsByGameAndCategoryOrderByTime(Game game, Category category);
 
     List<Speedrun> getSpeedrunsByUserOrderByGameAscCategoryAscTimeAsc(User user);
+
+    List<Speedrun> getSpeedrunsByGameOrderByCategoryAscTimeAsc(Game game);
+
+    List<Speedrun> getSpeedrunsByCategoryOrderByGameAscTimeAsc(Category category);
 }

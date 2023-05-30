@@ -11,7 +11,7 @@ import java.util.List;
 @Mapper
 public interface CommentMapper
 {
-    CommentMapper MAPPER = Mappers.getMapper(CommentMapper.class);
+    CommentMapper COMMENT_MAPPER = Mappers.getMapper(CommentMapper.class);
 
     @Mapping(target = "speedrun.id", source = "commentResource.speedrunId")
     @Mapping(target = "OP.id", source = "commentResource.OPId")
@@ -21,6 +21,6 @@ public interface CommentMapper
     @Mapping(target = "OPId", source = "comment.OP.id")
     CommentResource toCommentResource(Comment comment);
 
-    List<Comment> fromCommentResource(List<CommentResource> commentResources);
-    List<CommentResource> toCommentResource(List<Comment> comments);
+    List<Comment> fromCommentResources(List<CommentResource> commentResources);
+    List<CommentResource> toCommentResources(List<Comment> comments);
 }

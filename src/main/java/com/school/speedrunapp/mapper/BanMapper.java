@@ -11,13 +11,13 @@ import java.util.List;
 @Mapper
 public interface BanMapper
 {
-    BanMapper MAPPER = Mappers.getMapper(BanMapper.class);
+    BanMapper BAN_MAPPER = Mappers.getMapper(BanMapper.class);
 
     @Mapping(target = "user.id", source = "banResource.userid")
     Ban fromBanResource(BanResource banResource);
 
     @Mapping(target = "userId", source = "ban.user.id")
-    Ban toBanResource(Ban ban);
+    BanResource toBanResource(Ban ban);
 
     List<BanResource> toBanResources(List<Ban> bans);
     List<Ban> fromBanResources(List<BanResource> banResources);
