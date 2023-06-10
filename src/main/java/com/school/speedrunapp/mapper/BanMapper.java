@@ -13,7 +13,7 @@ public interface BanMapper
 {
     BanMapper BAN_MAPPER = Mappers.getMapper(BanMapper.class);
 
-    @Mapping(target = "user.id", source = "banResource.userid")
+    @Mapping(target = "user.id", source = "banResource.userId")
     Ban fromBanResource(BanResource banResource);
 
     @Mapping(target = "userId", source = "ban.user.id")

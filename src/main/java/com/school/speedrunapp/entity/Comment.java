@@ -15,7 +15,7 @@ public class Comment {
     @ManyToOne
     private Speedrun speedrun;
     @ManyToOne
-    private User OP;
+    private User user;
     private String comment;
     private Date postDate;
 
@@ -31,8 +31,8 @@ public class Comment {
         this.comment = comment;
     }
 
-    public void setOP(User OP) {
-        this.OP = OP;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public void setPostDate(Date postDate) {

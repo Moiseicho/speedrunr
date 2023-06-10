@@ -38,7 +38,7 @@ public class CommentServiceImpl implements CommentService
     public CommentResource save(CommentResource commentResource)
     {
         Comment comment = COMMENT_MAPPER.fromCommentResource(commentResource);
-        comment.setOP(userService.getById(commentResource.getOPId()));
+        comment.setUser(userService.getById(commentResource.getUserId()));
         comment.setSpeedrun(
                 SPEEDRUN_MAPPER.fromSpeedrunResource(
                         speedrunService.getById(commentResource.getSpeedrunId()
@@ -52,7 +52,7 @@ public class CommentServiceImpl implements CommentService
     public CommentResource update(CommentResource commentResource, long id) {
         Comment toUpdate = commentRepository.getReferenceById(id);
         toUpdate.setComment(commentResource.getComment());
-        toUpdate.setOP(userService.getById(commentResource.getOPId()));
+        toUpdate.setUser(userService.getById(commentResource.getUserId()));
         toUpdate.setSpeedrun(
                 SPEEDRUN_MAPPER.fromSpeedrunResource(
                         speedrunService.getById(commentResource.getSpeedrunId())
@@ -68,9 +68,9 @@ public class CommentServiceImpl implements CommentService
     }
 
     @Override
-    public List<CommentResource> getByOpId(long id) {
+    public List<CommentResource> getByUserId(long id) {
         return COMMENT_MAPPER.toCommentResources(
-                commentRepository.getCommentsByOPOrderByPostDateDesc(
+                commentRepository.getCommentsByUserOrderByPostDateDesc(
                         userService.getById(id)
                 )
         );

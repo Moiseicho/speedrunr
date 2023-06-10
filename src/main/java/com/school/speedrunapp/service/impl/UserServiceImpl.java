@@ -53,7 +53,7 @@ public class UserServiceImpl implements UserService
         User user = userRepository.getReferenceById(id);
         speedrunRepository.getSpeedrunsByUserOrderByGameAscCategoryAscTimeAsc(user)
                 .forEach(this::removeUserFromSpeedrun);
-        commentRepository.getCommentsByOPOrderByPostDateDesc(user)
+        commentRepository.getCommentsByUserOrderByPostDateDesc(user)
                 .forEach(this::removeUserFromComment);
         banRepository.getBansByUser(user)
                 .forEach(this::removeUserFromBan);
@@ -73,7 +73,7 @@ public class UserServiceImpl implements UserService
 
     private void removeUserFromComment(Comment comment)
     {
-        comment.setOP(null);
+        comment.setUser(null);
         commentRepository.save(comment);
     }
 

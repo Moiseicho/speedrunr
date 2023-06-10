@@ -13,6 +13,6 @@ public interface CommentService
     CommentResource update(CommentResource commentResource, long id);
     void delete(long id);
 
-    List<CommentResource> getByOpId(long id);
+    List<CommentResource> getByUserId(long id);
     List<CommentResource> getBySpeedrunId(long id);
 }

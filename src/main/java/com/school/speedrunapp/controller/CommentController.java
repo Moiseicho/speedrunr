@@ -45,7 +45,7 @@ public class CommentController
     }
 
     @GetMapping("/user/{id}")
-    public ResponseEntity<?> getByOpId(@PathVariable long id) { return ResponseEntity.ok(commentService.getByOpId(id)); }
+    public ResponseEntity<?> getByUserId(@PathVariable long id) { return ResponseEntity.ok(commentService.getByUserId(id)); }
 
     @GetMapping("/speedrun/{id}")
     public ResponseEntity<?> getBySpeedrunId(@PathVariable long id) { return ResponseEntity.ok(commentService.getBySpeedrunId(id)); }

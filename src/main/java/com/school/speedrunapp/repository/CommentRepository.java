@@ -10,7 +10,7 @@ import java.util.List;
 
 @Repository
 public interface CommentRepository extends JpaRepository<Comment, Long> {
-    List<Comment> getCommentsByOPOrderByPostDateDesc(User OP);
+    List<Comment> getCommentsByUserOrderByPostDateDesc(User user);
 
     List<Comment> getCommentsBySpeedrunOrderByPostDateDesc(Speedrun speedrun);
 

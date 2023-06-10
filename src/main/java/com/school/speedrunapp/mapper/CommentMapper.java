@@ -14,11 +14,11 @@ public interface CommentMapper
     CommentMapper COMMENT_MAPPER = Mappers.getMapper(CommentMapper.class);
 
     @Mapping(target = "speedrun.id", source = "commentResource.speedrunId")
-    @Mapping(target = "OP.id", source = "commentResource.OPId")
+    @Mapping(target = "user.id", source = "commentResource.userId")
     Comment fromCommentResource(CommentResource commentResource);
 
     @Mapping(target = "speedrunId", source = "comment.speedrun.id")
-    @Mapping(target = "OPId", source = "comment.OP.id")
+    @Mapping(target = "userId", source = "comment.user.id")
     CommentResource toCommentResource(Comment comment);
 
     List<Comment> fromCommentResources(List<CommentResource> commentResources);

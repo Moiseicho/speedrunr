@@ -12,7 +12,7 @@ public class CommentResource {
     @GeneratedValue
     private Long id;
     private Long speedrunId;
-    private Long OPId;
+    private Long userId;
     private String comment;
     private Date postDate;
 
@@ -22,5 +22,9 @@ public class CommentResource {
 
     public Long getId() {
         return id;
+    }
+
+    public Long getUserId() {
+        return userId;
     }
 }
